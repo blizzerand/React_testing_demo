@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProductDetails from './ProductDetails'
-import ProductsList from './ProductsList'
+import ProductList from './ProductList'
 
 
 class ProductContainer extends Component {
@@ -57,7 +57,7 @@ class ProductContainer extends Component {
             <div style={{margin: '8% 0 0 10%'}}>
                 
                 {/* List of products */}
-                <ProductsList products={this.state.productList} selectProduct={this.handleProductClick}/> 
+                <ProductList products={this.state.productList} selectProduct={this.handleProductClick}/> 
 
                 {/* Detail view of each product */}
                 <ProductDetails product = {this.state.selectedProduct } />

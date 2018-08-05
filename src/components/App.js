@@ -1,13 +1,14 @@
 import React from 'react';
-
+import ProductHeader from './ProductHeader';
 import ProductContainer from './ProductContainer';
-
-
-
+import '../style.css'
 const App =() => {
 
     return (
-     <ProductContainer />
+     <div>
+        <ProductHeader />
+        <ProductContainer />
+     </div>
     );
   
 }

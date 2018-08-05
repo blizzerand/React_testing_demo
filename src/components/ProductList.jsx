@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Products = ({ products, selectProduct }) => {
+const ProductList = ({ products, selectProduct }) => {
 
   var linkList = products.map( (product) => {
     return(
@@ -16,15 +16,9 @@ const Products = ({ products, selectProduct }) => {
   return(
     <div>
      <div style={{ display: 'block',  justifyContent: "space-between" }}>
-      <div style={{
-        float:'left',
-        padding: '10px',
-        width: '30%',
-        background: '#f0f0f0',
-        marginLeft:'auto' }}>
-
-        <h3> Products</h3>
-        <ul  style={{ listStyleType: 'none', padding: 0, fontSize:'15px' }}> {linkList} </ul>
+      <div className="box">
+        <h3 className="title"> Products</h3>
+        <ul  style={{ listStyleType: 'none', padding:"4%", fontSize:'15px' }}> {linkList} </ul>
       </div>
     </div>
     </div>
@@ -32,4 +26,4 @@ const Products = ({ products, selectProduct }) => {
   )
 }
 
-export default Products;
+export default ProductList;
