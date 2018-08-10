@@ -1,18 +1,18 @@
 import React from 'react';
 
 
-const Product = ({product}) => {
+const ProductDetails = ({product}) => {
 
  var productData;
 
   if(product)
      productData = <div>
-                  <h3> {product.name} </h3>
-                  <p>{product.description}</p>
+                  <h3 className="product-title">{product.name}</h3>
+                  <p className="product-description">{product.description}</p>
                   <hr/>
-                  <h4>{product.status}</h4>  </div>;
+                  <h4 className="product-status">{product.status}</h4>  </div>;
   else
-    productData = <h2> Sorry. Product doesnt exist </h2>;
+    productData = <h2 className="product-error">Sorry. Product doesnt exist</h2>;
 
   return (
     <div style={{ display: 'flex' }}>
@@ -28,4 +28,4 @@ const Product = ({product}) => {
   )    
 }
       
-export default Product;
+export default ProductDetails;

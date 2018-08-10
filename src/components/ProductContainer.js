@@ -8,7 +8,16 @@ class ProductContainer extends Component {
         super();
         this.state = {
             /* Initialize the product list state */
-          productList:  [
+          productList:  [],
+            selectedProduct: '',
+               
+        }
+        this.handleProductClick = this.handleProductClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            productList: [
                 {
                     id: 1,
                     name: 'NIKE Liteforce Blue Sneakers',
@@ -35,21 +44,17 @@ class ProductContainer extends Component {
                     description: 'Ut hendrerit venenatis lacus, vel lacinia ipsum fermentum vel. Cras.',
                     status: 'Out of Stock'
                 },
-            ],
-            selectedProduct: '',
-               
-        }
-        this.handleProductClick = this.handleProductClick.bind(this);
+            ]
+        })
     }
 
     handleProductClick(productId) {
-        console.log(productId);
        let selectedProduct= this.state.productList.find(x => x.id === Number(productId));
        /* Update selectedProduct */
        selectedProduct ?  
        this.setState({
             selectedProduct: selectedProduct
-        }, () => console.log(this.state.selectedProduct))  : null
+        })  : null
     }
 
     render() {
