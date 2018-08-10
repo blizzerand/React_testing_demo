@@ -1,26 +1,20 @@
 
-import ReactTestUtils from 'react-dom/test-utils'; // ES6
-import React from 'react';
+import { shallow } from 'enzyme'
 import ProductHeader from '../ProductHeader'
-
-
+import React from 'react';
 
 describe('ProductHeader Component', () => {
-    it('has an h2 tag', () => {
-    
 
-      const component = ReactTestUtils.renderIntoDocument(<ProductHeader/>);    
-      var node = ReactTestUtils.findRenderedDOMComponentWithTag(
-       component, 'h2'
-     );
-    
+    it('has an h2 tag', () => {
+      const component = shallow(<ProductHeader/>);    
+      var node = component.find('h2');
+      expect(node.length).toEqual(1);
+     
   });
 
     it('has a title class', () => {
-
-      const component = ReactTestUtils.renderIntoDocument(<ProductHeader/>);    
-      var node = ReactTestUtils.findRenderedDOMComponentWithClass(
-       component, 'title'
-     );
+      const component = shallow(<ProductHeader/>);
+      var node = component.find('h2');
+      expect(node.hasClass('title')).toBeTruthy();
     })
   })
